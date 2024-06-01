@@ -7,10 +7,6 @@ import EnvConstants from 'src/common/constants/env.constant';
 @Injectable()
 export class CloudinaryUploaderService implements StorageUploaderService {
   constructor(private configService: ConfigService) {
-    console.log('CloudinaryUploaderService');
-    console.log(this.configService.get(EnvConstants.CLOUDINARY_CLOUD_NAME));
-    console.log(this.configService.get(EnvConstants.CLOUDINARY_API_KEY));
-    console.log(this.configService.get(EnvConstants.CLOUDINARY_API_SECRET));
     v2.config({
       cloud_name: this.configService.get(EnvConstants.CLOUDINARY_CLOUD_NAME),
       api_key: this.configService.get(EnvConstants.CLOUDINARY_API_KEY),
