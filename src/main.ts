@@ -8,6 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   SwaggerConfig.config(app);
   const config = app.get(ConfigService);
+  app.enableCors();
   await app.listen(config.get(EnvConstants.PORT));
 }
 bootstrap();
