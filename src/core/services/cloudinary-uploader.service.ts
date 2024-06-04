@@ -23,7 +23,7 @@ export class CloudinaryUploaderService implements StorageUploaderService {
             resolve(result.secure_url);
           }
         })
-        .end(file.buffer);
+        .end(Buffer.from(file.buffer));
     });
   }
   deleteFile(fileUrl: string): Promise<any> {

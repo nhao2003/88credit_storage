@@ -9,6 +9,11 @@ export class MediaService {
   ) {}
 
   uploadFile(file: Express.Multer.File, folder: string) {
-    return this.storageUploaderService.uploadFile(file, folder);
+    // return this.storageUploaderService.uploadFile(file, folder);
+    try {
+      return this.storageUploaderService.uploadFile(file, folder);
+    } catch (error) {
+      throw new Error('Failed to upload file');
+    }
   }
 }
